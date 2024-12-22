@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import greetUser from '../src/cli.js';
-import playBrainEven from '../src/brain-even.js';
+import playBrainEven from '../src/games/brain-even.js';
 
 const brainEvenRules =
   'Answer "yes" if the number is even, otherwise answer "no".';

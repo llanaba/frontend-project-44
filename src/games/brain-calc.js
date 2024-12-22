@@ -1,9 +1,9 @@
-import { getUserAnswer } from './cli.js';
-import getRandomNumber from './random.js';
-import isEven from './is-even.js';
-import isCorrect from './is-correct.js';
+import { getUserAnswer } from '../cli.js';
+import getRandomNumber from '../random.js';
+import isEven from '../is-even.js';
+import isCorrect from '../is-correct.js';
 
-const playBrainEven = (userName, rules, numberOfQuestions, maxNumber) => {
+const playBrainCalc = (userName, rules, numberOfQuestions, maxNumber) => {
   console.log(rules);
   for (let i = 1; i <= numberOfQuestions; i += 1) {
     const randomNumber = getRandomNumber(maxNumber);
@@ -23,4 +23,4 @@ const playBrainEven = (userName, rules, numberOfQuestions, maxNumber) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default playBrainEven;
+export default playBrainCalc;
