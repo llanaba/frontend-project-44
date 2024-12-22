@@ -7,6 +7,5 @@ const brainEvenRules =
 const maxNumber = 100;
 const numberOfQuestions = 3;
 
-greetUser();
-console.log(brainEvenRules);
-playBrainEven(numberOfQuestions, maxNumber);
+const userName = greetUser();
+playBrainEven(userName, brainEvenRules, numberOfQuestions, maxNumber);
