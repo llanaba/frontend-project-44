@@ -1,26 +1,38 @@
-import { getUserAnswer } from '../cli.js';
 import getRandomNumber from '../random.js';
 import isEven from '../is-even.js';
-import isCorrect from '../is-correct.js';
+import play from '../index.js';
 
-const playBrainEven = (userName, rules, numberOfQuestions, maxNumber) => {
-  console.log(rules);
-  for (let i = 1; i <= numberOfQuestions; i += 1) {
-    const randomNumber = getRandomNumber(maxNumber);
-    console.log(`Question: ${randomNumber}`);
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
-    const userAnswer = getUserAnswer('Your answer: ');
-    if (isCorrect(correctAnswer, userAnswer)) {
-      console.log('Correct!');
-    } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}.'`
-      );
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+const prepareBrainEvenRoundData = (numberScope) => {
+  return {
+    randomNumber: getRandomNumber(numberScope),
+  };
+};
+
+const generateBrainEvenAnswer = (gameData) => {
+  const correctAnswer = isEven(gameData.randomNumber) ? 'yes' : 'no';
+  return correctAnswer;
+};
+
+const generateBrainEvenQuestion = (gameData) => {
+  const question = `Question: ${gameData.randomNumber}`;
+  const answer = generateBrainEvenAnswer(gameData);
+  return {
+    question: question,
+    correctAnswer: answer,
+  };
+};
+
+const playBrainEven = (userName, rules, numberOfRounds, numberScope) => {
+  const game = {
+    user: userName,
+    rules: rules,
+    numberOfRounds: numberOfRounds,
+    numberScope: numberScope,
+    generateQuestion: generateBrainEvenQuestion,
+    prepareRoundData: prepareBrainEvenRoundData,
+  };
+
+  play(game);
 };
 
 export default playBrainEven;
