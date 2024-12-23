@@ -1,4 +1,4 @@
-import { getUserAnswer } from './cli.js';
+import { getUserAnswer } from './userInteraction.js';
 
 const numberOfRounds = 3;
 
@@ -23,6 +23,7 @@ const play = (game) => {
       return;
     }
   }
+  console.log(`Congratulations, ${game.user}!`);
 };
 
 export default play;

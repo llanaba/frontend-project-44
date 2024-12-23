@@ -1,7 +1,9 @@
+import greetUser from '../userInteraction.js';
 import getRandomNumber from '../random.js';
 import play from '../index.js';
 
 const operators = ['+', '-', '*'];
+const userName = greetUser();
 
 const performCalculation = (num1, num2, operator) => {
   switch (operator) {
@@ -43,7 +45,7 @@ const generateBrainCalcQuestion = (gameData) => {
   };
 };
 
-const playBrainCalc = (userName) => {
+const playBrainCalc = () => {
   const game = {
     user: userName,
     rules: rules,
