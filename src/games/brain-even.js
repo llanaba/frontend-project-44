@@ -1,8 +1,6 @@
-import greetUser from '../userInteraction.js';
 import { isEven, getRandomNumber } from '../utils.js';
 import play from '../index.js';
 
-const userName = greetUser();
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 const numberScope = 100;
 
@@ -28,7 +26,7 @@ const generateBrainEvenQuestion = (gameData) => {
 
 const playBrainEven = () => {
   const game = {
-    user: userName,
+    // user: userName,
     rules: rules,
     numberScope: numberScope,
     prepareRoundData: prepareBrainEvenRoundData,

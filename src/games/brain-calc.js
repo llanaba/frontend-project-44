@@ -1,8 +1,6 @@
-import greetUser from '../userInteraction.js';
 import play from '../index.js';
 import { performCalculation, getRandomNumber } from '../utils.js';
 
-const userName = greetUser();
 const rules = 'What is the result of the expression?';
 const numberScope = 10;
 const operators = ['+', '-', '*'];
@@ -35,7 +33,6 @@ const generateBrainCalcQuestion = (gameData) => {
 
 const playBrainCalc = () => {
   const game = {
-    user: userName,
     rules: rules,
     numberScope: numberScope,
     prepareRoundData: prepareBrainCalcRoundData,

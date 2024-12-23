@@ -16,4 +16,6 @@ const performCalculation = (num1, num2, operator) => {
   }
 };
 
-export { getRandomNumber, isEven, performCalculation };
+const isEqual = (value1, value2) => value1 === value2;
+
+export { getRandomNumber, isEven, performCalculation, isEqual };
