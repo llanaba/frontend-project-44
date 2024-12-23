@@ -1,5 +1,9 @@
 const getRandomNumber = (max) => Math.ceil(Math.random() * max);
 
+const getNumberFromRange = (max, min) => {
+  return Math.ceil(Math.random() * (max - min + 1) + min - 1);
+};
+
 const isEven = (number) => number % 2 === 0;
 
 const performCalculation = (num1, num2, operator) => {
@@ -28,4 +32,11 @@ const findGcd = (num1, num2) => {
   return 1;
 };
 
-export { getRandomNumber, isEven, performCalculation, isEqual, findGcd };
+export {
+  getRandomNumber,
+  getNumberFromRange,
+  isEven,
+  performCalculation,
+  isEqual,
+  findGcd,
+};
