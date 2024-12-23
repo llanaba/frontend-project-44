@@ -14,6 +14,9 @@ const performCalculation = (num1, num2, operator) => {
   }
 };
 
+const rules = 'What is the result of the expression?';
+const numberScope = 10;
+
 const prepareBrainCalcRoundData = (numberScope) => {
   return {
     randomNumberOne: getRandomNumber(numberScope),
@@ -40,11 +43,10 @@ const generateBrainCalcQuestion = (gameData) => {
   };
 };
 
-const playBrainCalc = (userName, rules, numberOfRounds, numberScope) => {
+const playBrainCalc = (userName) => {
   const game = {
     user: userName,
     rules: rules,
-    numberOfRounds: numberOfRounds,
     numberScope: numberScope,
     generateQuestion: generateBrainCalcQuestion,
     prepareRoundData: prepareBrainCalcRoundData,

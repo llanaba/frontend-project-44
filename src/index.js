@@ -1,12 +1,14 @@
 import { getUserAnswer } from './cli.js';
 
+const numberOfRounds = 3;
+
 const isUserAnswerCorrect = (correctAnswer, userAnswer) =>
   correctAnswer === userAnswer;
 
 const play = (game) => {
   console.log(game.rules);
 
-  for (let i = 1; i <= game.numberOfRounds; i += 1) {
+  for (let i = 1; i <= numberOfRounds; i += 1) {
     const roundData = game.prepareRoundData(game.numberScope);
     const round = game.generateQuestion(roundData);
     console.log(round.question);
