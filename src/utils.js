@@ -18,4 +18,14 @@ const performCalculation = (num1, num2, operator) => {
 
 const isEqual = (value1, value2) => value1 === value2;
 
-export { getRandomNumber, isEven, performCalculation, isEqual };
+const findGcd = (num1, num2) => {
+  const smaller = Math.min(num1, num2);
+  for (let i = smaller; i >= 1; i -= 1) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      return i;
+    }
+  }
+  return 1;
+};
+
+export { getRandomNumber, isEven, performCalculation, isEqual, findGcd };
