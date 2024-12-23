@@ -4,20 +4,20 @@ import play from '../index.js';
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 const numberScope = 100;
 
-const prepareBrainEvenRoundData = (numberScope) => {
+const prepareRoundData = (numberScope) => {
   return {
     randomNumber: getRandomNumber(numberScope),
   };
 };
 
-const generateBrainEvenAnswer = (gameData) => {
+const generateAnswer = (gameData) => {
   const correctAnswer = isEven(gameData.randomNumber) ? 'yes' : 'no';
   return correctAnswer;
 };
 
-const generateBrainEvenQuestion = (gameData) => {
+const generateRound = (gameData) => {
   const question = `Question: ${gameData.randomNumber}`;
-  const answer = generateBrainEvenAnswer(gameData);
+  const answer = generateAnswer(gameData);
   return {
     question: question,
     correctAnswer: answer,
@@ -26,11 +26,10 @@ const generateBrainEvenQuestion = (gameData) => {
 
 const playBrainEven = () => {
   const game = {
-    // user: userName,
-    rules: rules,
-    numberScope: numberScope,
-    prepareRoundData: prepareBrainEvenRoundData,
-    generateRound: generateBrainEvenQuestion,
+    rules,
+    numberScope,
+    prepareRoundData,
+    generateRound,
   };
 
   play(game);

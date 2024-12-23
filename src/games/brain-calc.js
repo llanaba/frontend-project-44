@@ -5,7 +5,7 @@ const rules = 'What is the result of the expression?';
 const numberScope = 10;
 const operators = ['+', '-', '*'];
 
-const prepareBrainCalcRoundData = (numberScope) => {
+const prepareRoundData = (numberScope) => {
   return {
     randomNumberOne: getRandomNumber(numberScope),
     randomNumberTwo: getRandomNumber(numberScope),
@@ -13,7 +13,7 @@ const prepareBrainCalcRoundData = (numberScope) => {
   };
 };
 
-const generateBrainCalcAnswer = (gameData) => {
+const generateAnswer = (gameData) => {
   const correctAnswer = performCalculation(
     gameData.randomNumberOne,
     gameData.randomNumberTwo,
@@ -22,9 +22,9 @@ const generateBrainCalcAnswer = (gameData) => {
   return correctAnswer;
 };
 
-const generateBrainCalcQuestion = (gameData) => {
+const generateRound = (gameData) => {
   const question = `Question: ${gameData.randomNumberOne} ${gameData.randomOperator} ${gameData.randomNumberTwo}`;
-  const answer = generateBrainCalcAnswer(gameData);
+  const answer = generateAnswer(gameData);
   return {
     question: question,
     correctAnswer: answer,
@@ -33,10 +33,10 @@ const generateBrainCalcQuestion = (gameData) => {
 
 const playBrainCalc = () => {
   const game = {
-    rules: rules,
-    numberScope: numberScope,
-    prepareRoundData: prepareBrainCalcRoundData,
-    generateRound: generateBrainCalcQuestion,
+    rules,
+    numberScope,
+    prepareRoundData,
+    generateRound,
   };
 
   play(game);
