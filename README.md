@@ -9,3 +9,4 @@
 - Installing the project globally: https://asciinema.org/a/RQhxJZULorMJbmEAQUesbVeEn
 - Playing Brain Even (winning and losing): https://asciinema.org/a/Ps1ylbwo4FGjnxguGYkNK56JW
 - Playing Brain Calc (winning and losing): https://asciinema.org/a/flLMN6Zs3JBlsietCMQD4L3k9
+- Playing Brain GCD (winning and losing): https://asciinema.org/a/CxPntQ2gYcRIEwD1E2dSHrirJ
