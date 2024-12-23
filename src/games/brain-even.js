@@ -1,6 +1,5 @@
 import greetUser from '../userInteraction.js';
-import getRandomNumber from '../random.js';
-import isEven from '../is-even.js';
+import { isEven, getRandomNumber } from '../utils.js';
 import play from '../index.js';
 
 const userName = greetUser();
@@ -32,8 +31,8 @@ const playBrainEven = () => {
     user: userName,
     rules: rules,
     numberScope: numberScope,
-    generateQuestion: generateBrainEvenQuestion,
     prepareRoundData: prepareBrainEvenRoundData,
+    generateRound: generateBrainEvenQuestion,
   };
 
   play(game);

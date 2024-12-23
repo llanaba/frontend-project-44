@@ -1,29 +1,17 @@
 import greetUser from '../userInteraction.js';
-import getRandomNumber from '../random.js';
 import play from '../index.js';
+import { performCalculation, getRandomNumber } from '../utils.js';
 
-const operators = ['+', '-', '*'];
 const userName = greetUser();
-
-const performCalculation = (num1, num2, operator) => {
-  switch (operator) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
-  }
-};
-
 const rules = 'What is the result of the expression?';
 const numberScope = 10;
+const operators = ['+', '-', '*'];
 
 const prepareBrainCalcRoundData = (numberScope) => {
   return {
     randomNumberOne: getRandomNumber(numberScope),
     randomNumberTwo: getRandomNumber(numberScope),
-    randomOperator: operators[getRandomNumber(2)],
+    randomOperator: operators[getRandomNumber(operators.length - 1)],
   };
 };
 
@@ -50,8 +38,8 @@ const playBrainCalc = () => {
     user: userName,
     rules: rules,
     numberScope: numberScope,
-    generateQuestion: generateBrainCalcQuestion,
     prepareRoundData: prepareBrainCalcRoundData,
+    generateRound: generateBrainCalcQuestion,
   };
 
   play(game);

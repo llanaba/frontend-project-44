@@ -10,7 +10,7 @@ const play = (game) => {
 
   for (let i = 1; i <= numberOfRounds; i += 1) {
     const roundData = game.prepareRoundData(game.numberScope);
-    const round = game.generateQuestion(roundData);
+    const round = game.generateRound(roundData);
     console.log(round.question);
     const userAnswer = getUserAnswer('Your answer: ');
     if (isUserAnswerCorrect(round.correctAnswer, userAnswer)) {
