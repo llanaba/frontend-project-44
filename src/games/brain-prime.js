@@ -1,26 +1,22 @@
 import play from '../index.js';
-import { findGcd, getRandomNumber } from '../utils.js';
+import { isPrime, getRandomNumber } from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const numberScope = 100;
 
 const prepareRoundData = (numberScope) => {
   return {
-    randomNumberOne: getRandomNumber(numberScope),
-    randomNumberTwo: getRandomNumber(numberScope),
+    randomNumber: getRandomNumber(numberScope),
   };
 };
 
 const generateAnswer = (gameData) => {
-  const correctAnswer = findGcd(
-    gameData.randomNumberOne,
-    gameData.randomNumberTwo
-  ).toString();
+  const correctAnswer = isPrime(gameData.randomNumber) ? 'yes' : 'no';
   return correctAnswer;
 };
 
 const generateRound = (gameData) => {
-  const question = `Question: ${gameData.randomNumberOne} ${gameData.randomNumberTwo}`;
+  const question = `Question: ${gameData.randomNumber}`;
   const answer = generateAnswer(gameData);
   return {
     question: question,
@@ -28,7 +24,7 @@ const generateRound = (gameData) => {
   };
 };
 
-const playBrainGcd = () => {
+const playBrainPrime = () => {
   const game = {
     rules,
     numberScope,
@@ -39,4 +35,4 @@ const playBrainGcd = () => {
   play(game);
 };
 
-export default playBrainGcd;
+export default playBrainPrime;

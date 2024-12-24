@@ -32,6 +32,16 @@ const findGcd = (num1, num2) => {
   return 1;
 };
 
+const isPrime = (number) => {
+  if (number <= 1) return false;
+  if (number === 2) return true;
+  if (number % 2 === 0) return false;
+  for (let i = 3; i <= Math.sqrt(number); i += 2) {
+    if (number % i === 0) return false;
+  }
+  return true;
+};
+
 export {
   getRandomNumber,
   getNumberFromRange,
@@ -39,4 +49,5 @@ export {
   performCalculation,
   isEqual,
   findGcd,
+  isPrime,
 };
