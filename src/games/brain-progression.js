@@ -1,8 +1,6 @@
 import play from '../index.js';
 import { getRandomNumber, getNumberFromRange } from '../utils.js';
 
-const rules = 'What number is missing in the progression?';
-const numberScope = 50;
 const maxProgressionLength = 10;
 const minProgressionLength = 5;
 const maxDifference = 5;
@@ -26,7 +24,7 @@ const generateGappedSequence = (length, step, startingNumber, gapIndex) => {
 const prepareRoundData = (numberScope) => {
   const progressonLength = getNumberFromRange(
     maxProgressionLength,
-    minProgressionLength
+    minProgressionLength,
   );
   const startingNumber = getRandomNumber(numberScope);
   const step = getNumberFromRange(maxDifference, minDifference);
@@ -35,24 +33,24 @@ const prepareRoundData = (numberScope) => {
     progressonLength,
     step,
     startingNumber,
-    gapIndex
+    gapIndex,
   );
   return gappedSequence;
 };
 
 const generateRound = (gameData) => {
   const question = `Question: ${gameData.gappedSequence.join(' ')}`;
-  const answer = gameData.missingNumber.toString();
+  const correctAnswer = gameData.missingNumber.toString();
   return {
-    question: question,
-    correctAnswer: answer,
+    question,
+    correctAnswer,
   };
 };
 
 const playBrainProgression = () => {
   const game = {
-    rules,
-    numberScope,
+    rules: 'What number is missing in the progression?',
+    numberScope: 50,
     prepareRoundData,
     generateRound,
   };

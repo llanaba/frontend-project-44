@@ -1,8 +1,6 @@
 const getRandomNumber = (max) => Math.ceil(Math.random() * max);
 
-const getNumberFromRange = (max, min) => {
-  return Math.ceil(Math.random() * (max - min + 1) + min - 1);
-};
+const getNumberFromRange = (max, min) => Math.ceil(Math.random() * (max - min + 1) + min - 1);
 
 const isEven = (number) => number % 2 === 0;
 
@@ -15,8 +13,7 @@ const performCalculation = (num1, num2, operator) => {
     case '*':
       return num1 * num2;
     default:
-      console.log(`Оператор '${operator}' не поддерживается`);
-      return;
+      throw new Error(`Оператор '${operator}' не поддерживается`);
   }
 };
 

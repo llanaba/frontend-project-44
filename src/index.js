@@ -16,7 +16,7 @@ const play = (game) => {
     const userAnswer = getUserAnswer('Your answer: ');
     if (!isEqual(round.correctAnswer, userAnswer)) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${round.correctAnswer}.'`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${round.correctAnswer}.'`,
       );
       console.log(`Let's try again, ${userName}!`);
       return;

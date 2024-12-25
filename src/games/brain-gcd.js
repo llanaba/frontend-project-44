@@ -1,37 +1,32 @@
 import play from '../index.js';
 import { findGcd, getRandomNumber } from '../utils.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
-const numberScope = 100;
-
-const prepareRoundData = (numberScope) => {
-  return {
-    randomNumberOne: getRandomNumber(numberScope),
-    randomNumberTwo: getRandomNumber(numberScope),
-  };
-};
+const prepareRoundData = (numberScope) => ({
+  randomNumberOne: getRandomNumber(numberScope),
+  randomNumberTwo: getRandomNumber(numberScope),
+});
 
 const generateAnswer = (gameData) => {
   const correctAnswer = findGcd(
     gameData.randomNumberOne,
-    gameData.randomNumberTwo
+    gameData.randomNumberTwo,
   ).toString();
   return correctAnswer;
 };
 
 const generateRound = (gameData) => {
   const question = `Question: ${gameData.randomNumberOne} ${gameData.randomNumberTwo}`;
-  const answer = generateAnswer(gameData);
+  const correctAnswer = generateAnswer(gameData);
   return {
-    question: question,
-    correctAnswer: answer,
+    question,
+    correctAnswer,
   };
 };
 
 const playBrainGcd = () => {
   const game = {
-    rules,
-    numberScope,
+    rules: 'Find the greatest common divisor of given numbers.',
+    numberScope: 100,
     prepareRoundData,
     generateRound,
   };
