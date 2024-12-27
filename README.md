@@ -4,7 +4,46 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/abe14baaae8478233e3e/maintainability)](https://codeclimate.com/github/llanaba/frontend-project-44/maintainability)
 
-### Examples
+### Brain Games
+
+To install the games, do the following steps in your console:
+
+- To clone the project directory to your computer:
+
+```
+git clone git@github.com:llanaba/frontend-project-44.git
+```
+
+- To install dependencies:
+
+```
+make install
+```
+
+- To make the project available globally on your computer:
+
+```
+make publish
+npm link
+```
+
+If the program was installed successfully, running the following code should produce a greeting:
+
+```
+brain-games
+```
+
+To play a game run one of these commands:
+
+```
+brain-calc
+brain-even
+brain-gcd
+brain-prime
+brain-progression
+```
+
+### Examples of gameplay
 
 - Installing the project globally: https://asciinema.org/a/RQhxJZULorMJbmEAQUesbVeEn
 - Playing Brain Even: https://asciinema.org/a/Ps1ylbwo4FGjnxguGYkNK56JW

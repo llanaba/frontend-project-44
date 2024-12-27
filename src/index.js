@@ -1,4 +1,5 @@
 import getUserAnswer from './userInteraction.js';
+
 import { isEqual } from './utils.js';
 
 const numberOfRounds = 3;
